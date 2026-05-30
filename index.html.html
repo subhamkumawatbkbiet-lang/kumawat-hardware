@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Kumawat Trading Company – Quality Hardware Products at Best Prices. Paints, Plumbing, Electrical, Tools, Cement, Pipes, Bathroom Fittings and more. Located in Chirawa, Rajasthan."/>
+  <meta name="keywords" content="hardware shop Chirawa, Kumawat Trading Company, paints, plumbing, electrical, tools, cement, pipes, bathroom fittings, Rajasthan hardware"/>
+  <title>Kumawat Trading Company | Quality Hardware Products – Chirawa, Rajasthan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --red: #c0392b;
+      --red-dark: #96281b;
+      --red-light: #e74c3c;
+      --black: #111111;
+      --dark: #1a1a1a;
+      --gray: #333333;
+      --light-gray: #f5f5f5;
+      --white: #ffffff;
+      --border: #e0e0e0;
+      --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.16);
+      --radius: 10px;
+      --transition: all 0.3s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
+
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: var(--light-gray); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 4px; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.78rem;
+      padding: 7px 0;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .topbar a { color: #ccc; text-decoration: none; margin-left: 16px; }
+    .topbar a:hover { color: var(--red-light); }
+    .topbar-left, .topbar-right { display: flex; align-items: center; gap: 14px; }
+
+    /* ── NAVBAR ── */
+    nav {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      background: var(--red);
+      color: var(--white);
+      width: 42px; height: 42px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+    }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 1.05rem; font-weight: 800; color: var(--black); letter-spacing: -0.5px; }
+    .logo-sub { font-size: 0.7rem; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-links { display: flex; align-items: center; gap: 6px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); background: rgba(192,57,43,0.07); }
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 9px 20px !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--red-dark) !important; color: var(--white) !important; }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.4rem;
+      color: var(--black);
+      padding: 6px;
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      padding: 16px 0;
+      border-top: 2px solid var(--red);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .mobile-menu a:hover { color: var(--red); background: rgba(192,57,43,0.05); }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── HERO ── */
+    #home {
+      background: linear-gradient(135deg, var(--black) 0%, #2c0b0b 60%, var(--red-dark) 100%);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; z-index: 1; padding: 60px 0; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(192,57,43,0.25);
+      border: 1px solid rgba(192,57,43,0.5);
+      color: #ff7b6b;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .hero-title span { color: var(--red-light); }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(192,57,43,0.4); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    .hero-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--white); }
+    .stat-num span { color: var(--red-light); }
+    .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.55); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .hero-visual { position: relative; }
+    .hero-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      color: var(--white);
+    }
+    .hero-card-icons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .hero-tool-card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 18px 12px;
+      text-align: center;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .hero-tool-card:hover { background: rgba(192,57,43,0.25); transform: translateY(-3px); }
+    .hero-tool-card i { font-size: 1.8rem; color: var(--red-light); margin-bottom: 8px; display: block; }
+    .hero-tool-card span { font-size: 0.72rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+
+    /* ── SECTION HEADER ── */
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(192,57,43,0.1);
+      color: var(--red);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+    .section-title { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800; color: var(--black); margin-bottom: 14px; letter-spacing: -0.5px; }
+    .section-title span { color: var(--red); }
+    .section-desc { font-size: 1rem; color: #666; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+    .section-divider { width: 50px; height: 4px; background: var(--red); border-radius: 2px; margin: 16px auto 0; }
+
+    /* ── ABOUT ── */
+    #about { padding: 90px 0; background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-visual {
+      position: relative;
+      background: linear-gradient(135deg, var(--black), #3a0e0e);
+      border-radius: 20px;
+      padding: 40px;
+      color: var(--white);
+      overflow: hidden;
+    }
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 180px; height: 180px;
+      background: rgba(192,57,43,0.2);
+      border-radius: 50%;
+    }
+    .about-icon-big { font-size: 5rem; color: var(--red-light); margin-bottom: 20px; position: relative; }
+    .about-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+    .about-visual p { color: rgba(255,255,255,0.7); line-height: 1.7; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+    .about-stat-box {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .about-stat-box .num { font-size: 1.8rem; font-weight: 900; color: var(--red-light); }
+    .about-stat-box .lbl { font-size: 0.75rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
+    .about-content h2 { font-size: 2rem; font-weight: 800; color: var(--black); margin-bottom: 16px; letter-spacing: -0.5px; }
+    .about-content h2 span { color: var(--red); }
+    .about-content p { color: #555; line-height: 1.8; margin-bottom: 16px; }
+    .about-features { list-style: none; margin: 24px 0; }
+    .about-features li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: #444; font-size: 0.95rem; }
+    .about-features li i { color: var(--red); margin-top: 2px; flex-shrink: 0; }
+
+    /* ── PRODUCTS ── */
+    #products { padding: 90px 0; background: var(--light-gray); }
+    .category-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+    .cat-btn {
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: 2px solid var(--border);
+      background: var(--white);
+      color: var(--gray);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .cat-btn:hover, .cat-btn.active { background: var(--red); border-color: var(--red); color: var(--white); }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .product-img {
+      height: 180px;
+      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      text-transform: uppercase;
+    }
+    .product-info { padding: 18px; }
+    .product-cat { font-size: 0.72rem; color: var(--red); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .product-name { font-size: 1rem; font-weight: 700; color: var(--black); margin-bottom: 7px; }
+    .product-desc { font-size: 0.83rem; color: #777; line-height: 1.5; margin-bottom: 14px; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .product-price { font-size: 1.05rem; font-weight: 800; color: var(--red); }
+    .product-btn {
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .product-btn:hover { background: var(--red-dark); }
+
+    /* ── SERVICES ── */
+    #services { padding: 90px 0; background: var(--black); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(192,57,43,0.1), transparent);
+      opacity: 0;
+      transition: var(--transition);
+    }
+    .service-card:hover::before { opacity: 1; }
+    .service-card:hover { border-color: rgba(192,57,43,0.4); transform: translateY(-4px); }
+    .service-icon {
+      width: 64px; height: 64px;
+      background: rgba(192,57,43,0.15);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      color: var(--red-light);
+      margin: 0 auto 20px;
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon { background: var(--red); color: var(--white); }
+    .service-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .service-card p { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ── GALLERY ── */
+    #gallery { padding: 90px 0; background: var(--white); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+    .gallery-item:hover { transform: scale(1.04); box-shadow: var(--shadow-lg); }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; font-size: 4rem; background: linear-gradient(135deg, #1a1a1a, #3a0e0e); color: var(--red-light); }
+    .gallery-item:nth-child(2) { background: linear-gradient(135deg, #fff5f5, #ffe0e0); }
+    .gallery-item:nth-child(5) { background: linear-gradient(135deg, #f5f5f5, #e0e8f0); }
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(192,57,43,0.7);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      color: var(--white);
+      font-size: 1.5rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* ── TESTIMONIALS ── */
+    #reviews { padding: 90px 0; background: var(--light-gray); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      position: relative;
+    }
+    .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .review-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; right: 20px;
+      font-size: 5rem;
+      color: rgba(192,57,43,0.1);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 14px; }
+    .review-text { color: #555; font-size: 0.93rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .reviewer-name { font-weight: 700; color: var(--black); font-size: 0.95rem; }
+    .reviewer-role { font-size: 0.78rem; color: #999; margin-top: 2px; }
+
+    /* ── CONTACT ── */
+    #contact { padding: 90px 0; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
+    .contact-info h3 { font-size: 1.5rem; font-weight: 800; color: var(--black); margin-bottom: 8px; }
+    .contact-info > p { color: #666; line-height: 1.7; margin-bottom: 28px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 22px; }
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: rgba(192,57,43,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--red);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--black); margin-bottom: 3px; }
+    .contact-item-text span { font-size: 0.88rem; color: #666; }
+    .contact-item-text a { color: var(--red); text-decoration: none; font-weight: 500; }
+    .contact-item-text a:hover { text-decoration: underline; }
+    .map-container {
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 24px;
+      box-shadow: var(--shadow);
+    }
+    .map-container iframe { display: block; width: 100%; height: 220px; border: 0; }
+    .contact-form { background: var(--light-gray); border-radius: 16px; padding: 36px; }
+    .contact-form h3 { font-size: 1.3rem; font-weight: 800; color: var(--black); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.83rem; font-weight: 600; color: var(--gray); margin-bottom: 7px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--black);
+      background: var(--white);
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--red); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--black); color: rgba(255,255,255,0.7); padding: 60px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.5); max-width: 280px; }
+    .social-links { display: flex; gap: 10px; margin-top: 20px; }
+    .social-link {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    .social-link:hover { background: var(--red); color: var(--white); }
+    .footer-col h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.87rem; transition: var(--transition); }
+    .footer-col ul li a:hover { color: var(--red-light); }
+    .hours-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.84rem; }
+    .hours-item .day { color: rgba(255,255,255,0.5); }
+    .hours-item .time { color: rgba(255,255,255,0.8); font-weight: 500; }
+    .hours-item .closed { color: var(--red-light); }
+    .footer-bottom { padding: 20px 0; text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+
+    /* ── WHATSAPP BUTTON ── */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      background: #25d366;
+      color: var(--white);
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+      z-index: 2000;
+      transition: var(--transition);
+      animation: pulse-wa 2s infinite;
+    }
+    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 10px 30px rgba(37,211,102,0.55); }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
+      50% { box-shadow: 0 6px 36px rgba(37,211,102,0.7); }
+    }
+    .whatsapp-tooltip {
+      position: absolute;
+      bottom: 68px; right: 0;
+      background: var(--black);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+    }
+    .whatsapp-btn:hover .whatsapp-tooltip { opacity: 1; }
+
+    /* ── BACK TO TOP ── */
+    .back-top {
+      position: fixed;
+      bottom: 28px; left: 28px;
+      background: var(--red);
+      color: var(--white);
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: var(--shadow);
+      z-index: 2000;
+      transition: var(--transition);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .back-top.visible { opacity: 1; pointer-events: all; }
+    .back-top:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: var(--red); padding: 14px 0; }
+    .trust-items { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 32px; }
+    .trust-item { display: flex; align-items: center; gap: 8px; color: var(--white); font-size: 0.88rem; font-weight: 600; }
+    .trust-item i { opacity: 0.85; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 992px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .hero-stats { gap: 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .topbar .topbar-right { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns .btn-primary, .hero-btns .btn-outline { width: 100%; justify-content: center; }
+      .gallery-item:nth-child(1) { grid-column: span 1; grid-row: span 1; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-left">
+      <span><i class="fas fa-phone"></i> &nbsp;<a href="tel:+917023890296">+91 70238 90296</a></span>
+      <span><i class="fas fa-phone"></i> &nbsp;<a href="tel:+917340323800">+91 73403 23800</a></span>
+    </div>
+    <div class="topbar-right">
+      <span><i class="fas fa-map-marker-alt"></i> &nbsp;Chirawa, Rajasthan 333026</span>
+      <span><i class="fas fa-clock"></i> &nbsp;Mon–Sat: 8am – 8pm</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fas fa-wrench"></i></div>
+        <div class="logo-text">
+          <div class="logo-name">Kumawat Trading Co.</div>
+          <div class="logo-sub">Hardware Store · Chirawa</div>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-star"></i> Chirawa's Trusted Hardware Store</div>
+        <h1 class="hero-title">Quality Hardware<br><span>Products at</span><br>Best Prices</h1>
+        <p class="hero-subtitle">Kumawat Trading Company - your one-stop destination in Chirawa for paints, plumbing, electrical items, tools, cement, pipes, and everything you need to build and improve your space.</p>
+        <div class="hero-btns">
+          <a href="#products" class="btn-primary"><i class="fas fa-th-large"></i> Browse Products</a>
+          <a href="tel:+917023890296" class="btn-outline"><i class="fas fa-phone"></i> Call Us Now</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5K<span>+</span></div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">500<span>+</span></div>
+            <div class="stat-label">Products</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-icons">
+            <div class="hero-tool-card"><i class="fas fa-paint-roller"></i><span>Paints</span></div>
+            <div class="hero-tool-card"><i class="fas fa-faucet"></i><span>Plumbing</span></div>
+            <div class="hero-tool-card"><i class="fas fa-bolt"></i><span>Electrical</span></div>
+            <div class="hero-tool-card"><i class="fas fa-screwdriver-wrench"></i><span>Tools</span></div>
+            <div class="hero-tool-card"><i class="fas fa-layer-group"></i><span>Cement</span></div>
+            <div class="hero-tool-card"><i class="fas fa-circle-nodes"></i><span>Pipes</span></div>
+            <div class="hero-tool-card"><i class="fas fa-gear"></i><span>Nuts & Bolts</span></div>
+            <div class="hero-tool-card"><i class="fas fa-bath"></i><span>Bathroom</span></div>
+            <div class="hero-tool-card"><i class="fas fa-house-chimney"></i><span>Home Imp.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><i class="fas fa-truck-fast"></i> Free Home Delivery</div>
+      <div class="trust-item"><i class="fas fa-shield-halved"></i> Quality Guaranteed</div>
+      <div class="trust-item"><i class="fas fa-tags"></i> Best Prices</div>
+      <div class="trust-item"><i class="fas fa-headset"></i> Expert Advice</div>
+      <div class="trust-item"><i class="fas fa-rotate-left"></i> Easy Returns</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-up">
+        <div class="about-icon-big"><i class="fas fa-store"></i></div>
+        <h3>Serving Chirawa & Surrounding Areas</h3>
+        <p>From a trusted local shop on Surajgarh Bypass Road to a complete hardware destination - we've grown by keeping quality and customer service at the heart of everything we do.</p>
+        <div class="about-stats">
+          <div class="about-stat-box"><div class="num">15+</div><div class="lbl">Years of Service</div></div>
+          <div class="about-stat-box"><div class="num">500+</div><div class="lbl">Products</div></div>
+          <div class="about-stat-box"><div class="num">5000+</div><div class="lbl">Customers</div></div>
+          <div class="about-stat-box"><div class="num">100%</div><div class="lbl">Quality Promise</div></div>
+        </div>
+      </div>
+      <div class="about-content fade-up">
+        <div class="section-tag">About Us</div>
+        <h2>Your <span>Trusted Partner</span> for All Hardware Needs</h2>
+        <p>Kumawat Trading Company is a family-run hardware business serving Chirawa, Rajasthan and surrounding areas. Located on Surajgarh Bypass Road, we stock only trusted brands and stand behind every product we sell.</p>
+        <p>Whether you're renovating a bathroom, doing plumbing repairs, or building from scratch - our expert team is always here to guide you toward the right solution at the right price.</p>
+        <ul class="about-features">
+          <li><i class="fas fa-check-circle"></i> Wide range of quality products from trusted brands</li>
+          <li><i class="fas fa-check-circle"></i> Knowledgeable staff with real construction experience</li>
+          <li><i class="fas fa-check-circle"></i> Competitive pricing with bulk order discounts</li>
+          <li><i class="fas fa-check-circle"></i> Fast home delivery across Chirawa and nearby areas</li>
+          <li><i class="fas fa-check-circle"></i> Dedicated contractor and builder supply program</li>
+        </ul>
+        <a href="#contact" class="btn-primary"><i class="fas fa-phone"></i> Get In Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Our Products</div>
+      <h2 class="section-title">Browse Our <span>Product Range</span></h2>
+      <p class="section-desc">From paints to pipes - everything you need for construction, renovation, and home improvement.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="category-tabs fade-up">
+      <button class="cat-btn active" onclick="filterProducts('all', this)">All Products</button>
+      <button class="cat-btn" onclick="filterProducts('paints', this)">🎨 Paints</button>
+      <button class="cat-btn" onclick="filterProducts('plumbing', this)">🔧 Plumbing</button>
+      <button class="cat-btn" onclick="filterProducts('electrical', this)">⚡ Electrical</button>
+      <button class="cat-btn" onclick="filterProducts('tools', this)">🔨 Tools</button>
+      <button class="cat-btn" onclick="filterProducts('cement', this)">🏗️ Cement</button>
+      <button class="cat-btn" onclick="filterProducts('pipes', this)">🔩 Pipes</button>
+      <button class="cat-btn" onclick="filterProducts('bathroom', this)">🚿 Bathroom</button>
+      <button class="cat-btn" onclick="filterProducts('nuts', this)">⚙️ Nuts & Bolts</button>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <!-- Paints -->
+      <div class="product-card fade-up" data-cat="paints">
+        <div class="product-img">🎨<div class="product-badge">Popular</div></div>
+        <div class="product-info">
+          <div class="product-cat">Paints</div>
+          <div class="product-name">Premium Wall Paint</div>
+          <div class="product-desc">Weather-resistant, long-lasting interior & exterior wall paint. Available in 200+ shades.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20Premium%20Wall%20Paint." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up" data-cat="paints">
+        <div class="product-img">🖌️</div>
+        <div class="product-info">
+          <div class="product-cat">Paints</div>
+          <div class="product-name">Enamel Paint</div>
+          <div class="product-desc">High-gloss enamel for wood and metal surfaces. Durable finish, quick-drying formula.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20Enamel%20Paint." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Plumbing -->
+      <div class="product-card fade-up" data-cat="plumbing">
+        <div class="product-img">🚰<div class="product-badge">Best Seller</div></div>
+        <div class="product-info">
+          <div class="product-cat">Plumbing</div>
+          <div class="product-name">Water Tap (Chrome)</div>
+          <div class="product-desc">Premium chrome-finished basin tap, anti-drip valve, easy installation for any basin or sink.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20Water%20Tap." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Electrical -->
+      <div class="product-card fade-up" data-cat="electrical">
+        <div class="product-img">⚡</div>
+        <div class="product-info">
+          <div class="product-cat">Electrical</div>
+          <div class="product-name">MCB Circuit Breaker</div>
+          <div class="product-desc">Single-pole miniature circuit breaker for household and industrial electrical protection.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20MCB%20Circuit%20Breaker." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tools -->
+      <div class="product-card fade-up" data-cat="tools">
+        <div class="product-img">🔨<div class="product-badge">New</div></div>
+        <div class="product-info">
+          <div class="product-cat">Tools</div>
+          <div class="product-name">Power Drill Machine</div>
+          <div class="product-desc">850W corded drill with variable speed, reverse function, and 13mm chuck. Ideal for DIY and pro use.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20Power%20Drill%20Machine." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Cement -->
+      <div class="product-card fade-up" data-cat="cement">
+        <div class="product-img">🏗️</div>
+        <div class="product-info">
+          <div class="product-cat">Cement</div>
+          <div class="product-name">OPC 43 Grade Cement</div>
+          <div class="product-desc">Ordinary Portland Cement for general construction. Consistent quality, high strength. Bulk orders welcome.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20OPC%2043%20Grade%20Cement." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Pipes -->
+      <div class="product-card fade-up" data-cat="pipes">
+        <div class="product-img">🔩</div>
+        <div class="product-info">
+          <div class="product-cat">Pipes</div>
+          <div class="product-name">UPVC Pipes & Fittings</div>
+          <div class="product-desc">High-pressure UPVC pipes for water supply, drainage, and irrigation. Multiple sizes available.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20UPVC%20Pipes." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Bathroom -->
+      <div class="product-card fade-up" data-cat="bathroom">
+        <div class="product-img">🚿<div class="product-badge">Popular</div></div>
+        <div class="product-info">
+          <div class="product-cat">Bathroom Fittings</div>
+          <div class="product-name">Shower Set (Rain Type)</div>
+          <div class="product-desc">Overhead rain shower with hand shower, stainless steel arm, brushed or chrome finish.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20Shower%20Set." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+      <!-- Nuts & Bolts -->
+      <div class="product-card fade-up" data-cat="nuts">
+        <div class="product-img">⚙️</div>
+        <div class="product-info">
+          <div class="product-cat">Nuts & Bolts</div>
+          <div class="product-name">Hex Bolt Set (Stainless)</div>
+          <div class="product-desc">304 stainless steel hex bolts in M4–M20 sizes. Corrosion-resistant, available in sets or bulk.</div>
+          <div class="product-footer">
+            <div class="product-price">Contact for Price</div>
+            <a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20Hex%20Bolt%20Set." class="product-btn" target="_blank">Enquire</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag" style="background:rgba(192,57,43,0.3);color:#ff8a7a;">Our Services</div>
+      <h2 class="section-title" style="color:var(--white);">We Go Beyond <span>Just Selling</span></h2>
+      <p class="section-desc" style="color:rgba(255,255,255,0.5);">Professional services designed for homeowners, contractors, and builders in Chirawa and beyond.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-truck-fast"></i></div>
+        <h3>Home Delivery</h3>
+        <p>Fast and reliable delivery straight to your doorstep across Chirawa and surrounding areas. Same-day delivery for in-stock items.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-boxes-stacked"></i></div>
+        <h3>Bulk Orders</h3>
+        <p>Special pricing for bulk purchases. Ideal for builders, contractors, and real estate developers. Call us for quotes.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-helmet-safety"></i></div>
+        <h3>Contractor Supply</h3>
+        <p>Dedicated supply channel for registered contractors. Priority processing, credit terms, and on-site delivery available.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-sliders"></i></div>
+        <h3>Custom Orders</h3>
+        <p>Can't find what you need? We source it for you. Custom sizes, special materials, and branded products on request.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-headset"></i></div>
+        <h3>Expert Consultation</h3>
+        <p>Not sure what you need? Our experienced team is happy to guide you through any construction or renovation project.</p>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon"><i class="fas fa-rotate-left"></i></div>
+        <h3>Easy Returns</h3>
+        <p>Hassle-free return and exchange policy on all products. Customer satisfaction is our number one priority.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Our Gallery</div>
+      <h2 class="section-title">Shop <span>Highlights</span></h2>
+      <p class="section-desc">A glimpse into Kumawat Trading Company - our store, products, and the work we're proud of.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="gallery-grid fade-up">
+      <div class="gallery-item"><i class="fas fa-store"></i><div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">🎨<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">🔧<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">⚡<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">🔨<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">🚿<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">🏗️<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+      <div class="gallery-item">⚙️<div class="gallery-overlay"><i class="fas fa-expand"></i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Testimonials</div>
+      <h2 class="section-title">What Our <span>Customers Say</span></h2>
+      <p class="section-desc">Real words from real customers who trust Kumawat Trading Company for their hardware needs.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="review-text">"Excellent service and great product range! I've been buying all my construction materials from Kumawat Trading Company for years. The prices are unbeatable and the staff always helps me find exactly what I need."</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar">RK</div>
+          <div>
+            <div class="reviewer-name">Ramesh Kumar</div>
+            <div class="reviewer-role">Civil Contractor, Chirawa</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="stars">★★★★★</div>
+        <div class="review-text">"Ordered paints and plumbing items for my home renovation. Everything was delivered on time and the quality was top-notch. Very professional team - will definitely order again!"</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SS</div>
+          <div>
+            <div class="reviewer-name">Sunita Sharma</div>
+            <div class="reviewer-role">Homeowner, Chirawa</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-up">
+        <div class="stars">★★★★☆</div>
+        <div class="review-text">"Great bulk pricing for my projects. The contractor supply program has made my work so much easier. Quick delivery and always the right material. Highly recommended for builders in Rajasthan."</div>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MV</div>
+          <div>
+            <div class="reviewer-name">Mohan Verma</div>
+            <div class="reviewer-role">Building Contractor, Jhunjhunu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Contact Us</div>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="section-desc">Have a question or want to place an order? Visit us or reach out directly.</p>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="fade-up">
+        <div class="contact-info">
+          <h3>Visit Our Shop</h3>
+          <p>Come in and see our full range in person. Our team is always ready to assist you find the right product at the right price.</p>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="contact-item-text">
+              <strong>Shop Address</strong>
+              <span>Surajgarh Bypass Road, Chirawa,<br>Rajasthan 333026, India</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-item-text">
+              <strong>Phone</strong>
+              <span>
+                <a href="tel:+917023890296">+91 70238 90296</a><br>
+                <a href="tel:+917340323800">+91 73403 23800</a>
+              </span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-item-text">
+              <strong>WhatsApp</strong>
+              <span>
+                <a href="https://wa.me/917023890296" target="_blank">+91 70238 90296</a><br>
+                <a href="https://wa.me/917340323800" target="_blank">+91 73403 23800</a>
+              </span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-item-text">
+              <strong>Business Hours</strong>
+              <span>Mon–Sat: 8:00am – 8:00pm<br>Sunday: 10:00am – 4:00pm</span>
+            </div>
+          </div>
+        </div>
+        <!-- GOOGLE MAPS -->
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220.02690750192036!2d75.65112983790596!3d28.257846075715655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391321524af5af17%3A0xe29bbdba84bb5381!2sKumawat%20Trading%20Company!5e0!3m2!1sen!2sin!4v1777527510671!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="contact-form fade-up">
+        <h3>Send Us a Message</h3>
+        <form onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label>What are you looking for?</label>
+            <select>
+              <option value="">Select a category</option>
+              <option>Paints</option>
+              <option>Plumbing Items</option>
+              <option>Electrical Items</option>
+              <option>Tools</option>
+              <option>Cement</option>
+              <option>Pipes</option>
+              <option>Nuts & Bolts</option>
+              <option>Bathroom Fittings</option>
+              <option>Home Improvement</option>
+              <option>Bulk Order</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message *</label>
+            <textarea placeholder="Describe what you need - product, quantity, location..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo" style="margin-bottom:16px;display:inline-flex;">
+          <div class="logo-icon"><i class="fas fa-wrench"></i></div>
+          <div class="logo-text">
+            <div class="logo-name" style="color:var(--white)">Kumawat Trading Co.</div>
+            <div class="logo-sub">Hardware Store · Chirawa</div>
+          </div>
+        </a>
+        <p>Your trusted hardware partner in Chirawa, Rajasthan. Quality products, expert advice, and unbeatable prices - all in one place on Surajgarh Bypass Road.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/917023890296" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#products">Paints</a></li>
+          <li><a href="#products">Plumbing Items</a></li>
+          <li><a href="#products">Electrical Items</a></li>
+          <li><a href="#products">Tools</a></li>
+          <li><a href="#products">Cement & Sand</a></li>
+          <li><a href="#products">Bathroom Fittings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Business Hours</h4>
+        <div class="hours-item"><span class="day">Monday</span><span class="time">8am – 8pm</span></div>
+        <div class="hours-item"><span class="day">Tuesday</span><span class="time">8am – 8pm</span></div>
+        <div class="hours-item"><span class="day">Wednesday</span><span class="time">8am – 8pm</span></div>
+        <div class="hours-item"><span class="day">Thursday</span><span class="time">8am – 8pm</span></div>
+        <div class="hours-item"><span class="day">Friday</span><span class="time">8am – 8pm</span></div>
+        <div class="hours-item"><span class="day">Saturday</span><span class="time">8am – 8pm</span></div>
+        <div class="hours-item"><span class="day">Sunday</span><span class="time closed">10am – 4pm</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Kumawat Trading Company, Chirawa, Rajasthan 333026. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/917023890296?text=Hello!%20I%20want%20to%20enquire%20about%20your%20hardware%20products." class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+  <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+</a>
+
+<!-- BACK TO TOP -->
+<a href="#home" class="back-top" id="backTop" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<script>
+  // ── HAMBURGER MENU ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // ── STICKY NAV SHADOW ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // ── BACK TO TOP ──
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) backTop.classList.add('visible');
+    else backTop.classList.remove('visible');
+  });
+
+  // ── ACTIVE NAV LINK ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+
+  // ── SCROLL ANIMATIONS ──
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ── PRODUCT FILTER ──
+  function filterProducts(cat, btn) {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // ── FORM SUBMIT ──
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+    btn.style.background = '#27ae60';
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>
